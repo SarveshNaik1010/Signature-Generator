@@ -1,0 +1,175 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: poppins, sans-serif;
+  margin: 0;
+  font-size: 64.5%;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* home */
+
+.div-intro {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  border-bottom: 4px solid #2b29a5;
+}
+
+p {
+  margin: 2.4rem;
+  color: #20202c;
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+.title {
+  color: #2b29a5;
+  font-weight: 600;
+}
+
+.sub-title {
+  font-size: 2.4rem;
+  color: #241e33;
+}
+
+.input-name {
+  border: none; /* Remove default border */
+  border-bottom: 1px solid #ccc; /* Add bottom border */
+  color: #2b29a5;
+  font-weight: 600;
+  padding: 5px; /* Add padding */
+  text-align: center;
+  outline: none; /* Remove outline on focus */
+  font-size: 3.2rem;
+}
+
+.input-name::placeholder {
+  color: #241e33; /* Change placeholder text color */
+}
+
+.div-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.4rem;
+}
+
+.tag,
+.setting-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  width: max-content;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border-radius: 12px;
+  border: 2px solid #2b29a5;
+  margin: 0 1.2rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag:hover,
+.setting-button:hover {
+  color: #fff;
+  background-color: #2b29a5;
+}
+
+/* Canvas */
+#canvas-container {
+  padding: 3.2rem;
+  text-align: center;
+}
+
+.div-skribble {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.div-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.setting {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.setting-label {
+  font-size: 1.4rem;
+  color: #20202c;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full width */
+  height: 20px; /* Set a height */
+  background: #ddd; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners */
+  outline: none; /* Remove default focus style */
+  margin: 10px 0; /* Add some margin for spacing */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 20px; /* Set a specific width */
+  height: 20px; /* Set a specific height */
+  background: #4CAF50; /* Color of the thumb */
+  border-radius: 50%; /* Round the thumb */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  background: #ddd; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  background: #2b29a5; /* Color of the thumb */
+  border: none; /* Remove the default border */
+  border-radius: 50%; /* Round the thumb */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* WebKit/Blink */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ddd; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  background: #2b29a5; /* Color of the thumb */
+  border: none; /* Remove the default border */
+  border-radius: 50%; /* Round the thumb */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.setting-button {
+  padding: 0.4rem 1.2rem;
+  font-size: 1.4rem;
+}
+
+#canvas {
+  border: 2px solid black;
+}

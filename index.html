@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script defer src="script.js"></script> -->
+    <script defer src="canvas.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <title>Signature Genertaor</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="div-intro">
+      <p class="title">Signature Generator</p>
+      <p class="sub-title">
+        Scribble on the canvas and generate your digital Signature
+      </p>
+      <input
+        type="text"
+        class="input-name"
+        name=""
+        id=""
+        placeholder="Enter your name"
+      />
+      <div class="div-tags">
+        <a class="btn-create tag" href="#canvas-container">
+          <span>Create Signature</span>
+          <ion-icon name="arrow-down-outline"></ion-icon>
+        </a>
+        <!-- <p class="tag">
+          <span>Sign Up</span>
+        </p> -->
+        <!-- <p class="tag">Export in JPEG or PNG</p>
+        <p class="tag">Export in JPEG or PNG</p> -->
+      </div>
+    </div>
+    <div id="canvas-container">
+      <p class="scribble-title title">Scribble here</p>
+      <div class="div-skribble">
+        <div class="div-settings">
+          <div class="setting">
+            <label class="setting-label">Stroke Width</label>
+            <input
+              class="setting-input"
+              type="range"
+              max="20"
+              name="lineWidth"
+              value="1"
+            />
+          </div>
+          <div class="setting">
+            <label class="setting-label">Color</label>
+            <input class="setting-input" name="strokeStyle" type="color" />
+          </div>
+          <div class="setting">
+            <p class="setting-button btn-clear">Clear</p>
+            <p class="setting-button btn-generate">Generate</p>
+          </div>
+        </div>
+        <canvas id="canvas" width="500" height="300"></canvas>
+      </div>
+    </div>
+  </body>
+</html>
