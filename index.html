@@ -13,18 +13,27 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />
-    <!-- <script defer src="script.js"></script> -->
-    <script defer src="canvas.js"></script>
+    /> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" />
+
+    <script defer src="script.js"></script>
+    <script type="module" defer src="canvas.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="media.css" />
     <title>Signature Genertaor</title>
     <style></style>
   </head>
   <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-link login">Login</a>
+      <a href="#" class="navbar-link signup">SignUp</a>
+    </nav>
+
     <div class="div-intro">
       <p class="title">Signature Generator</p>
       <p class="sub-title">
@@ -54,7 +63,7 @@
       <div class="div-skribble">
         <div class="div-settings">
           <div class="setting">
-            <label class="setting-label">Stroke Width</label>
+            <label class="setting-label">Thickness</label>
             <input
               class="setting-input"
               type="range"
@@ -64,15 +73,28 @@
             />
           </div>
           <div class="setting">
+            <input class="setting-input cb-name" type="checkbox" value="" />
+            <label class="setting-label">With Name</label>
+          </div>
+          <div class="setting">
             <label class="setting-label">Color</label>
             <input class="setting-input" name="strokeStyle" type="color" />
           </div>
           <div class="setting">
             <p class="setting-button btn-clear">Clear</p>
-            <p class="setting-button btn-generate">Generate</p>
+            <p class="setting-button btn-preview">Preview</p>
           </div>
         </div>
         <canvas id="canvas" width="500" height="300"></canvas>
+        <div class="div-preview">
+          <div class="final-signature">
+            <img class="preview-sign" src="" alt="" />
+            <p class="preview-name"></p>
+          </div>
+          <div class="setting div-generate">
+            <p class="setting-button btn-generate">Generate</p>
+          </div>
+        </div>
       </div>
     </div>
   </body>

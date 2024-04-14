@@ -13,14 +13,41 @@ a {
   text-decoration: none;
 }
 
-/* home */
+/* -------------------------------------------------------------------------- */
+/*                                   Navbar                                   */
+/* -------------------------------------------------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: end;
+  gap: 2.4rem;
+  align-items: center;
+  padding: 1.2rem;
+  background-color: #2b29a5;
+}
+
+.navbar-link {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* .signup {
+  background-color: #fff;
+  color: #2b29a5;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+} */
+
+/* -------------------------------------------------------------------------- */
+/*                                    Home                                    */
+/* -------------------------------------------------------------------------- */
 
 .div-intro {
   display: grid;
   justify-content: center;
   align-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   border-bottom: 4px solid #2b29a5;
 }
 
@@ -101,19 +128,34 @@ p {
 .div-settings {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center; /* Changed to center */
   gap: 1.2rem;
 }
 
 .setting {
   display: flex;
+  align-items: center;
   gap: 1.2rem;
 }
 
+.setting-input[type="checkbox"] {
+  transform: scale(1.5); /* Adjusted checkbox size */
+}
 .setting-label {
   font-size: 1.4rem;
   color: #20202c;
+}
+
+.setting-button {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  margin: 1.2rem;
+}
+
+#canvas {
+  border: 2px solid black;
 }
 
 input[type="range"] {
@@ -132,7 +174,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 20px; /* Set a specific width */
   height: 20px; /* Set a specific height */
-  background: #4CAF50; /* Color of the thumb */
+  background: #4caf50; /* Color of the thumb */
   border-radius: 50%; /* Round the thumb */
   cursor: pointer; /* Add a pointer cursor on hover */
 }
@@ -165,11 +207,20 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer; /* Add a pointer cursor on hover */
 }
 
-.setting-button {
-  padding: 0.4rem 1.2rem;
-  font-size: 1.4rem;
+/* -------------------------------------------------------------------------- */
+/*                                   Preview                                  */
+/* -------------------------------------------------------------------------- */
+.div-preview {
+  display: none;
+  /* display: grid; */
+  justify-content: center;
+  align-items: center;
 }
 
-#canvas {
-  border: 2px solid black;
+.preview-name {
+  font-size: 1.6rem;
+}
+
+.preview-sign {
+  width: 200px;
 }

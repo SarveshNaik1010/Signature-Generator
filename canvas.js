@@ -1,10 +1,16 @@
 const canvas = document.getElementById("canvas");
 const settingInputs = document.querySelectorAll(".setting-input");
 const btnClear = document.querySelector(".btn-clear");
-const btnGenerate = document.querySelector(".btn-generate");
+const btnPreview = document.querySelector(".btn-preview");
 const btnCreate = document.querySelector(".btn-create");
 const scribbleTitle = document.querySelector(".scribble-title");
 const inputName = document.querySelector(".input-name");
+const previewSignImg = document.querySelector(".preview-sign");
+const previewNameParagraph = document.querySelector(".preview-name");
+const checkBoxName = document.querySelector(".cb-name");
+const divPreview = document.querySelector(".div-preview");
+const btnGenerate = document.querySelector(".btn-generate");
+const finalSignatureDiv = document.querySelector(".final-signature");
 
 const ctx = canvas.getContext("2d");
 
@@ -90,17 +96,37 @@ btnClear.addEventListener("click", function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+btnPreview.addEventListener("click", function () {
+  const imageURL = canvas.toDataURL("image/png");
+
+  previewSignImg.src = imageURL;
+  divPreview.style.display = "grid";
+
+  if (checkBoxName.checked) {
+    previewNameParagraph.style.display = "block";
+    previewNameParagraph.textContent = `(${inputName.value})`;
+  } else {
+    previewNameParagraph.style.display = "none";
+  }
+});
+
 btnGenerate.addEventListener("click", function () {
   const link = document.createElement("a");
+  domtoimage
+    .toPng(finalSignatureDiv)
+    .then(function (dataUrl) {
+      // Set the href attribute to the data URL of the canvas image
+      link.href = dataUrl;
 
-  // Set the href attribute to the data URL of the canvas image
-  link.href = canvas.toDataURL("image/png");
+      // Set the download attribute to specify the filename
+      link.download = `${inputName.value}_signature.png`;
 
-  // Set the download attribute to specify the filename
-  link.download = `${inputName.value}_signature.png`;
-
-  // Trigger the download
-  link.click();
+      // Trigger the download
+      link.click();
+    })
+    .catch(function (error) {
+      console.error("oops, something went wrong!", error);
+    });
 });
 
 btnCreate.addEventListener("click", function () {
