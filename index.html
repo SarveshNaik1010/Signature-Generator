@@ -16,7 +16,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 
-    <script defer src="script.js"></script>
     <script type="module" defer src="canvas.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="media.css" />
@@ -70,6 +69,7 @@
             <input class="setting-input cb-name" type="checkbox" value="" />
             <label class="setting-label">With Name</label>
           </div>
+          <span class="error-message">Please enter your name above</span>
           <div class="setting">
             <label class="setting-label">Color</label>
             <input class="setting-input" name="strokeStyle" type="color" />
@@ -82,7 +82,9 @@
         <canvas id="canvas" width="500" height="300"></canvas>
         <div class="div-preview">
           <div class="final-signature">
-            <img class="preview-sign" src="" alt="" />
+            <div class="div--preview-sign">
+              <img class="preview-sign" src="" alt="" />
+            </div>
             <p class="preview-name"></p>
           </div>
           <div class="setting div-generate">

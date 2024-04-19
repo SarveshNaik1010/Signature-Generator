@@ -11,6 +11,7 @@ const checkBoxName = document.querySelector(".cb-name");
 const divPreview = document.querySelector(".div-preview");
 const btnGenerate = document.querySelector(".btn-generate");
 const finalSignatureDiv = document.querySelector(".final-signature");
+const errorMessage = document.querySelector(".error-message");
 
 const ctx = canvas.getContext("2d");
 
@@ -92,11 +93,7 @@ settingInputs.forEach((si, i) => {
   });
 });
 
-btnClear.addEventListener("click", function () {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-});
-
-btnPreview.addEventListener("click", function () {
+function generatePreview() {
   const imageURL = canvas.toDataURL("image/png");
 
   previewSignImg.src = imageURL;
@@ -104,11 +101,25 @@ btnPreview.addEventListener("click", function () {
 
   if (checkBoxName.checked) {
     previewNameParagraph.style.display = "block";
+    if (!inputName.value) {
+      console.log("ern");
+      errorMessage.style.display = "block";
+      previewNameParagraph.style.display = "none";
+      return;
+    }
     previewNameParagraph.textContent = `(${inputName.value})`;
   } else {
+    errorMessage.style.display = "none";
     previewNameParagraph.style.display = "none";
   }
+}
+
+btnClear.addEventListener("click", function () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
+btnPreview.addEventListener("click", generatePreview);
+checkBoxName.addEventListener("click", generatePreview);
 
 btnGenerate.addEventListener("click", function () {
   const link = document.createElement("a");
